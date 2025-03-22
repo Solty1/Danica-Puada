@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danica Puada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h3>Checkout</h3>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Order Summary</h2>
+
+        <!-- ✅ User Profile Section -->
+        <section id="user-profile">
+            <h3>Shipping Information</h3>
+            <p><strong>Name:</strong> <span id="profile-name">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+            <p><strong>Phone:</strong> <span id="profile-phone">Loading...</span></p>
+            <p><strong>Address:</strong> <span id="profile-address">Loading...</span></p>
+            <p id="not-logged-in" style="color:red; display:none;">You must log in to proceed.</p>
+        </section>
+
+        <h2>Your Cart</h2>
+        <ul id="checkout-items"></ul>
+        <h3>Total: <span id="checkout-total">P0.00</span></h3>
+        <button id="confirm-purchase">Confirm Purchase</button>
+    </main>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

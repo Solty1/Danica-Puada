@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danica Puada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Danica Perfume Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" id="logout" style="display: none;">Logout</a>
+        </nav>
+    </header>
+
+    <div id="profile-container" style="display: none;">
+        <h2>Your Profile</h2>
+        <h2>Username: <span id="profile-name">Loading...</span></h2>
+        <h2>Email: <span id="profile-email">Loading...</span></h2>
+        <h2>Phone Number: <span id="profile-phone">Loading...</span></h2>
+        <h2>Address: <span id="profile-address">Loading...</span></h2>
+    </div>
+
+    <div id="not-logged-in" style="display: none; text-align: center;">
+        <h2>You must register or sign in first!</h2>
+        <a href="login.html"><button>Sign In</button></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

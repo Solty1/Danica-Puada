@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danica Puada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Danica Perfume Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+            
+            <!-- Sign In button (Hidden when logged in) -->
+            <a href="login.html" id="sign-in-btn">Sign In</a>
+
+            <!-- Profile button (Hidden when not logged in) -->
+            <a href="profile.html" id="profile-btn" style="display: none;">Profile</a>
+
+            <!-- Logout button (Hidden when not logged in) -->
+            <button id="logout-btn" style="display: none;">Logout</button>
+        </nav>
+    </header>
+
+    <h2>Products</h2>
+
+    <div class="product">
+        <img src="images/product1.jpg" alt="Product 1">
+        <p>Victoria Secret Vs Pure Seduction 250ml- $199</p>
+        <button class="add-to-cart" data-name="Victoria Secret Vs Pure Seduction 250ml" data-price="199">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/product2.jpg" alt="Product 2">
+        <p>BATH & BODY WORKS Victoria's Secret Pure Seduction Woman 250ml Fragrance Mist- $199</p>
+        <button class="add-to-cart" data-name="BATH & BODY WORKS Victoria's Secret Pure Seduction Woman 250ml Fragrance Mist" data-price="199">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/product3.jpg" alt="Product 3">
+        <p>Victoria's Secret Bare Vanilla Mist 250ml - $199</p>
+        <button class="add-to-cart" data-name="Victoria's Secret Bare Vanilla Mist 250ml" data-price="199">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/product4.jpg" alt="Product 4">
+        <p>Victoria's Secret Vibrant Breeze Fragrance Mist 250ml Victoria's Secret Body Sprays & Mists - $199</p>
+        <button class="add-to-cart" data-name="Victoria's Secret Vibrant Breeze Fragrance Mist 250ml Victoria's Secret Body Sprays & Mists" data-price="199">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/product5.jpg" alt="Product 5">
+        <p>Victorias Secret Fine Fragrance Mist 8.4 FL OZ / 250 mL Made In USA - $199</p>
+        <button class="add-to-cart" data-name="Victorias Secret Fine Fragrance Mist 8.4 FL OZ / 250 mL Made In USA" data-price="199">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/product6.jpg" alt="Product 6">
+        <p>Victoria Secret Vs Aqua Kiss 250ml - $199</p>
+        <button class="add-to-cart" data-name="Victoria Secret Vs Aqua Kiss 250ml" data-price="199">Add to Cart</button>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let loggedInUser = JSON.parse(localStorage.getItem("user")) || null;
+
+        function updateNavButtons() {
+            const signInButton = document.getElementById("sign-in-btn");
+            const profileButton = document.getElementById("profile-btn");
+            const logoutButton = document.getElementById("logout-btn");
+
+            if (loggedInUser) {
+                if (signInButton) signInButton.style.display = "none";
+                if (profileButton) profileButton.style.display = "inline";
+                if (logoutButton) logoutButton.style.display = "inline";
+            } else {
+                if (signInButton) signInButton.style.display = "inline";
+                if (profileButton) profileButton.style.display = "none";
+                if (logoutButton) logoutButton.style.display = "none";
+            }
+        }
+
+        updateNavButtons();
+
+        // Logout Function - Redirects to Sign In Page
+        document.getElementById("logout-btn").addEventListener("click", function () {
+            localStorage.removeItem("user"); // Remove user data
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    });
+</script>
+
+</body>
+</html>
